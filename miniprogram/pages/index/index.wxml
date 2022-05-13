@@ -1,6 +1,0 @@
-<button 
-  size="mini" 
-  bind:tap="handleClick"
->
-  {{count}}
-</button>
