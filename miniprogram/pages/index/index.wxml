@@ -1,2 +1,6 @@
-
-<view>111</view>
+<button 
+  size="mini" 
+  bind:tap="handleClick"
+>
+  {{count}}
+</button>
