@@ -12,9 +12,10 @@ export default function request<T = any>({ url, method, data }: IRequestProps): 
         const result: T = (res.data as any).data
         resolve(result)
       },
-      fail(err) {
-        reject(err)
-      }
+      // fail(err) {
+      //   reject(err)
+      // }
+      fail: reject
     })
   })
 }
