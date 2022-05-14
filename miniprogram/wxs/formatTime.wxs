@@ -1,0 +1,18 @@
+function zero(time) {
+  time = time.toString()
+
+  return ('00' + time).slice(time.length)
+}
+
+function formatTime(time) {
+  // 转换成秒钟
+  time = time / 1000
+  // 分
+  var f = Math.floor(time / 60)
+  // 秒
+  var m = Math.floor(time) % 60
+
+  return zero(f) + ':' + zero(m)
+}
+
+module.exports = formatTime
