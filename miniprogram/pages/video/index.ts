@@ -12,7 +12,12 @@ Page<{ topMvs: any[] }, any>({
   },
 
   async getTopMvData(offset: number) {
+    // 展示加载动画
+    wx.showNavigationBarLoading()
+
     const res = await getTopMvs(offset)
+    // 关闭加载动画
+    wx.hideNavigationBarLoading()
     
     if (offset === 0) {
       this.setData({ topMvs: res.data, hasMore: res.hasMore })
@@ -35,5 +40,17 @@ Page<{ topMvs: any[] }, any>({
   onReachBottom() {
     if (!this.data.hasMore) return
     this.getTopMvData(this.data.topMvs.length)
+  },
+
+  /**
+   * 处理函数
+   */
+  handleVideoItemClick(e: any) {
+    const { id } = e.currentTarget.dataset.item
+
+    // 跳转到详情页
+    wx.navigateTo({
+      url: `../video-detail/index?id=${id}`
+    })
   }
 })
