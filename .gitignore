@@ -15,3 +15,6 @@ node_modules/
 
 # typings wx 定义的类型
 typings
+
+# 地址
+address.ts

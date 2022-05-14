@@ -1,4 +1,4 @@
-// pages/video/index.ts
+import { getTopMvs } from '../../services/api/video' 
 Page({
 
   /**
@@ -12,14 +12,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    getTopMvs(0, 10).then((res) => {
+      console.log(res)
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
   },
 
   /**
