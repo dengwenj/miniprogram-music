@@ -1,11 +1,14 @@
-// pages/video-detail/index.ts
+import { getMvUrl, getMvDetail, getRelatedVideo } from '../../services/api/video'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    mvUrl: null,
+    mvDetail: null,
+    relatedVideo: null
   },
 
   /**
@@ -13,7 +16,22 @@ Page({
    */
   onLoad(options) {
     const { id } = options
-    
+
+    this.getPageData(id!)
+  },
+
+  getPageData(id: string) {
+    getMvUrl(id).then((res) => {
+      this.setData({ mvUrl: res.data })
+    })
+
+    getMvDetail(id).then((res) => {
+      this.setData({ mvDetail: res.data })
+    })
+
+    getRelatedVideo(id).then((res) => {
+      this.setData({ relatedVideo: res.data })
+    })
   },
 
   /**

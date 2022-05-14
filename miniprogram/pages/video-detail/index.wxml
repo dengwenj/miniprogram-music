@@ -1,2 +1,10 @@
-<!--pages/video-detail/index.wxml-->
-<text>pages/video-detail/index.wxml</text>
+<video
+  class="play-video"
+  src="{{mvUrl.url}}"
+  style="width: 100%;"
+  autoplay
+  loop
+/>
+<block wx:for="{{100}}" wx:key="*this">
+  <view>努力开发中...{{item}}</view>
+</block>

@@ -10,3 +10,33 @@ export const getTopMvs = (offset: number, limit: number = 10) => {
     }
   })
 }
+
+export const getMvUrl = (id: number | string) => {
+  return request({
+    url: '/mv/url',
+    method: 'GET',
+    data: {
+      id
+    }
+  })
+}
+
+export const getMvDetail = (mvid: number | string) => {
+  return request({
+    url: '/mv/detail',
+    method: 'GET',
+    data: {
+      mvid
+    }
+  })
+}
+
+export const getRelatedVideo = (id: number | string) => {
+  return request({
+    url: '/related/allvideo',
+    method: 'GET',
+    data: {
+      id
+    }
+  })
+}
