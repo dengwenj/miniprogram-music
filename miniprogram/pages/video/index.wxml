@@ -1,5 +1,5 @@
 <view class="video">
   <view class="item" wx:for="{{topMvs}}" wx:key="id">
-    <VideoItemV1 item="{{item}}" />
+    <video-item-v1 item="{{item}}" />
   </view>
 </view>

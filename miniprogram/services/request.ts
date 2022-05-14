@@ -9,7 +9,7 @@ export default function request<T = any>({ url, method, data }: IRequestProps): 
       method,
       data,
       success(res) {
-        const result: T = (res.data as any).data
+        const result: T = (res.data as any)
         resolve(result)
       },
       // fail(err) {
