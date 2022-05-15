@@ -45,7 +45,7 @@ Page<{ topMvs: any[] }, any>({
   /**
    * 处理函数
    */
-  handleVideoItemClick(e: any) {
+  handleVideoItemClick(e: WechatMiniprogram.CustomEvent) {
     const { id } = e.currentTarget.dataset.item
 
     // 跳转到详情页
