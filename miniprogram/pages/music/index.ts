@@ -1,18 +1,30 @@
 import { getBanners } from '../../services/api/music'
 import queryRect from '../../utils/queryRect'
 import throttle from '../../utils/throttle'
+import { rankingStore } from '../../store/index'
 
 const throttleRect = throttle(queryRect, 300)
 
 Page({
   data: {
     swiperHeight: 0,
-    banners: []
+    banners: [],
+    recommendSongs: []
   },
 
   onLoad() {
     // 获取页面数据
     this.getPageData()
+
+     // 发起共享数据的请求
+     rankingStore.dispatch("getRankingDataAction")
+
+     // 从store获取共享的数据
+     rankingStore.onState("hotRanking", (res: any) => {
+       const recommendSongs = res?.tracks?.slice(0, 6)
+       this.setData({ recommendSongs })
+     })
+    
   },
 
   getPageData() {

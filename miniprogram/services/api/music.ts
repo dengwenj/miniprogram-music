@@ -9,3 +9,13 @@ export const getBanners = () => {
     }
   })
 }
+
+export const getRankings = (idx: number) => {
+  return request({
+    url: '/top/list',
+    method: 'GET',
+    data: {
+      idx
+    }
+  })
+}
