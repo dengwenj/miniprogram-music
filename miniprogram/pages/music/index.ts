@@ -1,9 +1,12 @@
 import { getBanners } from '../../services/api/music'
+import queryRect from '../../utils/queryRect'
+import throttle from '../../utils/throttle'
 
+const throttleRect = throttle(queryRect, 300)
 
 Page({
   data: {
-    swiperHeight: 60,
+    swiperHeight: 0,
     banners: []
   },
 
@@ -26,11 +29,8 @@ Page({
       url: '../search-detail/index'
     })
   },
-  handleImageLoaded() {
-    const query = wx.createSelectorQuery()
-    query.select('.swiper-image').boundingClientRect()
-    query.exec((res) => {
-      this.setData({ swiperHeight: res[0].height })
-    })
+  async handleImageLoaded() {
+    const res = await throttleRect('.swiper-image')
+    this.setData({ swiperHeight: res[0].height })
   }
 })
