@@ -21,6 +21,7 @@ Page<{ topMvs: any[] }, any>({
     
     if (offset === 0) {
       this.setData({ topMvs: res.data, hasMore: res.hasMore })
+      wx.stopPullDownRefresh()
       return
     }
 

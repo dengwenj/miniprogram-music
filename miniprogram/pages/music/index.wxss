@@ -1,1 +1,18 @@
-/* pages/home/index.wxss */
+.van-search {
+  background-color: #fafafa !important;
+}
+.van-search__content {
+  background-color: #fff !important;
+}
+
+.swiper {
+
+}
+
+.swiper-item {
+  display: flex;
+}
+
+.swiper .swiper-item .swiper-image {
+  width: 100%;
+}
