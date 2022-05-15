@@ -24,7 +24,6 @@ Page({
        const recommendSongs = res?.tracks?.slice(0, 6)
        this.setData({ recommendSongs })
      })
-    
   },
 
   getPageData() {
