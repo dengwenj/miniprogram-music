@@ -1,12 +1,18 @@
+page {
+  padding: 0 20rpx;
+}
+
 .van-search {
   background-color: #fafafa !important;
+  padding: 20px 0 !important;
 }
 .van-search__content {
   background-color: #fff !important;
 }
 
 .swiper {
-
+  border-radius: 10rpx;
+  overflow: hidden;
 }
 
 .swiper-item {
