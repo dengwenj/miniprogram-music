@@ -1,2 +1,6 @@
-<van-search value="{{ value }}" placeholder="请输入搜索关键词" />
-
+<van-search 
+  shape="round" 
+  placeholder="搜索你喜欢的歌曲~"
+  disabled
+  bind:click-input="handleClickSearch"
+/>
